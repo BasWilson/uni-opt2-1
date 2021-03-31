@@ -1,6 +1,6 @@
 import interfaces.IDraw;
 
-class Draw implements IDraw {
+abstract class Draw implements IDraw {
 
     @Override
     public void drawBoxAround(String stringToDrawAround, String color) {
@@ -9,12 +9,12 @@ class Draw implements IDraw {
 
     @Override
     public void drawBoxAround(String stringToDrawAround) {
-        System.out.println(generateBox(stringToDrawAround));
+        System.out.println(Colors.ANSI_RESET + generateBox(stringToDrawAround));
     }
 
     @Override
     public void drawLine(String string) {
-        System.out.println("  " + string);
+        System.out.println(Colors.ANSI_RESET + "  " + string);
     }
 
     @Override

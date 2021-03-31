@@ -7,10 +7,11 @@ public class Simulator extends Draw {
     
     // Holds the money-score of a postalcode
     // money-score is just a value that correlates with the amount people spend during their shopping sessions
-    Map<String, Integer> postalCodeScores = new HashMap<String, Integer>();
-    List<Customer> customers = new ArrayList<Customer>();
+    private Map<String, Integer> postalCodeScores = new HashMap<String, Integer>();
+    private List<Customer> customers = new ArrayList<Customer>();
+    private List<Product> products = new ArrayList<Product>();
 
-    public void StartSimulation() {
+    public Simulator() {
         this.drawBoxAround("Simulation Started", Colors.ANSI_PURPLE);
         this.generateCustomers();
         this.generatePostalCodeScores();
@@ -51,7 +52,11 @@ public class Simulator extends Draw {
         for (int i = 0; i < this.customers.size(); i++) {
             Customer c = this.customers.get(i);
             Integer postalCodeScore = postalCodeScores.get(c.getPostalCode());
-            this.drawLine(c.getName() + ": " + postalCodeScore);
+            this.drawLine(c.getName() + ": " + c.getPostalCode() + ", : " + postalCodeScore);
         }
     }
+
+    public List<Customer> getCustomers() {return this.customers;}
+    public List<Product> getProducts() {return this.products;}
+    public Map<String, Integer> getPostalCodeScores() {return this.postalCodeScores;}
 }

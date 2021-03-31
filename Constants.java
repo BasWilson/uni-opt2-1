@@ -1,4 +1,4 @@
-interface Constants {
+class Constants {
     public static final String[] surnames = {
         "Wilson", "Jansen", "Tasma", "Voerman", "Brownlee", "Akoma",
         "de Jong", "de Vries", "Bakker", "Visser", "Smit", "Mulder",

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 class Customer extends Draw {
@@ -10,6 +11,7 @@ class Customer extends Draw {
         this.name = name;
         this.age = age;
         this.postalCode = postalCode;
+        this.shoppingSessions = new ArrayList<ShoppingSession>();
     }
     
     public void addShoppingSession(ShoppingSession session) {
@@ -21,4 +23,5 @@ class Customer extends Draw {
     public String getPostalCode() { return this.postalCode; }
     public String getName() { return this.name; }
     public int getAge() { return this.age; }
+    public List<ShoppingSession> getShoppingSessions() { return this.shoppingSessions; }
 }
